@@ -1,7 +1,7 @@
-package io.github.tibetteixeira.api.v1.service.impl;
+package io.github.tibetteixeira.api.v1.domain.service.impl;
 
-import io.github.tibetteixeira.api.v1.repository.ReceitaRepository;
-import io.github.tibetteixeira.api.v1.service.ReceitaService;
+import io.github.tibetteixeira.api.v1.domain.repository.ReceitaRepository;
+import io.github.tibetteixeira.api.v1.domain.service.ReceitaService;
 import org.springframework.stereotype.Service;
 
 @Service

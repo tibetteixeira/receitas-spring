@@ -1,4 +1,4 @@
-package io.github.tibetteixeira.api.v1.domain.entity;
+package io.github.tibetteixeira.api.v1.domain.model;
 
 import lombok.Getter;
 import lombok.Setter;
