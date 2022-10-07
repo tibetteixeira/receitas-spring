@@ -1,36 +1,54 @@
 package io.github.tibetteixeira.api.v1.domain.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 
-@Getter @Setter
 @Entity
+@Getter @Setter
 @Table(name = "usuario")
 @NoArgsConstructor
-public class Usuario {
+@AllArgsConstructor
+public class Usuario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
     private Integer id;
 
-    @Column(name = "senha")
+    @Column
     private String senha;
 
-    @Column(name = "nome", length = 20)
+    @Column(length = 20)
     private String nome;
 
-    @Column(name = "sobrenome", length = 20)
+    @Column(length = 20)
     private String sobrenome;
 
-
-    @Column(name = "email", length = 100)
+    @Column(length = 100)
     private String email;
 
     @Embedded
     private DataAuditoria dataAuditoria;
+
+    @OneToMany(mappedBy = "usuario")
+    private List<Receita> receitas;
+
+    @ManyToMany
+    @JoinTable(name = "receitas_favoritas",
+                joinColumns = @JoinColumn(name = "id_usuario"),
+                inverseJoinColumns = @JoinColumn(name = "id_receita"))
+    private List<Receita> receitasFavoritas;
+
+    @OneToMany(mappedBy = "avaliacaoReceitaPK.usuario")
+    private List<AvaliacaoReceita> avaliacoes;
+
+    @OneToMany(mappedBy = "usuario")
+    private List<ComentarioReceita> comentarioReceitas;
 
 }
