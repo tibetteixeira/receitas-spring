@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 
-    List<Usuario> findAll();
+    List<Usuario> findByNomeLike(String nome);
 }

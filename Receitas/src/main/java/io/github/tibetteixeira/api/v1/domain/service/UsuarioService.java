@@ -4,7 +4,7 @@ import io.github.tibetteixeira.api.v1.domain.model.Usuario;
 
 import java.util.List;
 
-public interface UsuarioService {
+public interface UsuarioService extends CrudService<Usuario, Integer> {
 
-    List<Usuario> listarTodos();
+    List<Usuario> listarPorNome(String nome);
 }
