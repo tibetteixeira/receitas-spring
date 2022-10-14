@@ -5,22 +5,20 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "modo_preparo")
-public class ModoPreparo implements Serializable {
+@Table(name = "tb_rating")
+public class Rating implements Serializable {
 
     @EmbeddedId
-    private ModoPreparoPK modoPreparoPK;
+    private RatingPK ratingPK;
 
     @Column
-    private String descricao;
+    private Integer score;
+
 }

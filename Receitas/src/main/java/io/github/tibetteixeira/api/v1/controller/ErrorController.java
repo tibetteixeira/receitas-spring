@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "/erro")
-public class ErroController {
+@RequestMapping(path = "/error")
+public class ErrorController {
 
     @GetMapping
     public String index() {

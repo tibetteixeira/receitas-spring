@@ -1,4 +1,4 @@
 package io.github.tibetteixeira.api.v1.domain.service;
 
-public interface ReceitaService {
+public interface RecipeService {
 }

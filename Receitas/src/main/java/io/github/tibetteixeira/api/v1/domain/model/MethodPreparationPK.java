@@ -11,12 +11,12 @@ import java.io.Serializable;
 
 @Getter @Setter
 @Embeddable
-public class ModoPreparoPK implements Serializable {
+public class MethodPreparationPK implements Serializable {
 
     @Column
-    private Integer ordem;
+    private Integer order;
 
     @ManyToOne
-    @JoinColumn(name = "id_receita")
-    private Receita receita;
+    @JoinColumn(name = "recipe_id")
+    private Recipe recipe;
 }

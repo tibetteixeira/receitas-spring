@@ -12,29 +12,29 @@ import java.io.Serializable;
 @Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "comentario")
-public class ComentarioReceita implements Serializable {
+@Table(name = "tb_comment")
+public class Comment implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
+    @Column(name = "comment_id")
     private Integer id;
 
     @Column(length = 100)
-    private String titulo;
+    private String title;
 
-    @Column
-    private String comentario;
-
-    @ManyToOne
-    @JoinColumn(name = "id_usuario")
-    private Usuario usuario;
+    @Column(name = "comment_desc")
+    private String comment;
 
     @ManyToOne
-    @JoinColumn(name = "id_receita")
-    private Receita receita;
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "recipe_id")
+    private Recipe recipe;
 
     @Embedded
-    private DataAuditoria dataAuditoria;
+    private AuditDate auditDate;
 
 }

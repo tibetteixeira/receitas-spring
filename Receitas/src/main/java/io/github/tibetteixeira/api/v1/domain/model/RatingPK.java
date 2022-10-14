@@ -10,13 +10,13 @@ import java.io.Serializable;
 
 @Embeddable
 @Getter @Setter
-public class AvaliacaoReceitaPK implements Serializable {
+public class RatingPK implements Serializable {
 
     @ManyToOne
-    @JoinColumn(name = "id_usuario")
-    private Usuario usuario;
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @ManyToOne
-    @JoinColumn(name = "id_receita")
-    private Receita receita;
+    @JoinColumn(name = "recipe_id")
+    private Recipe recipe;
 }

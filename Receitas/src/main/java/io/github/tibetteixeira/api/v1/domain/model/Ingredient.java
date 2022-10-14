@@ -13,26 +13,26 @@ import java.util.List;
 @Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "ingrediente")
-public class Ingrediente implements Serializable {
+@Table(name = "tb_ingredient")
+public class Ingredient implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
+    @Column(name = "ingredient_id")
     private Integer id;
 
     @Column
-    private Float quantidade;
+    private Float amount;
 
     @ManyToOne
-    @JoinColumn(name = "id_produto")
-    private Produto produto;
+    @JoinColumn(name = "product_id")
+    private Product product;
 
     @ManyToOne
-    @JoinColumn(name = "sigla_unidade")
-    private Unidade unidade;
+    @JoinColumn(name = "unit_abbr")
+    private Unit unit;
 
-    @ManyToMany(mappedBy = "ingredientes")
-    private List<Receita> receitas;
+    @ManyToMany(mappedBy = "ingredients")
+    private List<Recipe> recipes;
 
 }

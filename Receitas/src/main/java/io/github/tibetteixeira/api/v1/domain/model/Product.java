@@ -13,18 +13,18 @@ import java.util.List;
 @Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "produto")
-public class Produto implements Serializable {
+@Table(name = "tb_product")
+public class Product implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
+    @Column(name = "product_id")
     private Integer id;
 
     @Column(length = 100)
-    private String descricao;
+    private String description;
 
-    @OneToMany(mappedBy = "produto")
-    private List<Ingrediente> ingredientes;
+    @OneToMany(mappedBy = "product")
+    private List<Ingredient> ingredients;
 
 }

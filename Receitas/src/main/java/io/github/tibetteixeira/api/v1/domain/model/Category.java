@@ -13,18 +13,17 @@ import java.util.List;
 @Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "unidade")
-public class Unidade implements Serializable {
+@Table(name = "tb_category")
+public class Category implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(length = 3)
-    private String sigla;
+    @Column(name = "category_id")
+    private Integer id;
 
-    @Column(length = 20)
-    private String descricao;
+    @Column(length = 50)
+    private String description;
 
-    @OneToMany(mappedBy = "unidade")
-    private List<Ingrediente> ingredientes;
-
+    @OneToMany(mappedBy = "category")
+    private List<Recipe> recipes;
 }
