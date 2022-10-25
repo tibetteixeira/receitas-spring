@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
 
-    List<User> findByNameLike(String name);
+    List<User> findByNameContains(String name);
 }

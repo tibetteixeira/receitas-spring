@@ -1,4 +1,4 @@
-package io.github.tibetteixeira.api.v1.encrypt;
+package io.github.tibetteixeira.encrypt;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
