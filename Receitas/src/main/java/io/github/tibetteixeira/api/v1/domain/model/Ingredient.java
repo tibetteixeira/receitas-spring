@@ -1,5 +1,6 @@
 package io.github.tibetteixeira.api.v1.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,6 +19,7 @@ public class Ingredient implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+//    TODO incluir id generator sequence
     @Column(name = "ingredient_id")
     private Integer id;
 
@@ -32,6 +34,7 @@ public class Ingredient implements Serializable {
     @JoinColumn(name = "unit_abbr")
     private Unit unit;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "ingredients")
     private List<Recipe> recipes;
 
